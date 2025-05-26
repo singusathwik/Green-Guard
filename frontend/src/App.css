@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  margin-left: 70px;
+  padding: 30px;
+  background: #f1f8e9;
+  height: 100vh;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.expanded ~ .content {
+  margin-left: 220px;
+}

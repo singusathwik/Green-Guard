@@ -1,0 +1,246 @@
+.threat-wrapper {
+  background: white;
+  border: 2px solid #f94949;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.threat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.threat-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.threat-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.threat-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.threat-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.threat-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.threat-card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background: #f9f9f9;
+  cursor: pointer;
+  align-items: center;
+}
+
+.threat-card-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.threat-card-status {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.status {
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background-color: #ffb020;
+  color: white;
+}
+
+.status.investigating {
+  background-color: #206bc4;
+  color: white;
+}
+
+.status.resolved {
+  background-color: #2fb344;
+  color: white;
+}
+
+.severity {
+  padding: 4px 12px;
+  font-size: 14px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.severity.low {
+  background-color: #e6f4ff;
+  color: #1677ff;
+}
+
+.severity.medium {
+  background-color: #fff7e6;
+  color: #fa8c16;
+}
+
+.severity.high {
+  background-color: #fff1f0;
+  color: #ff4d4f;
+}
+
+.threat-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-primary, .resolve-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover, .resolve-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:active, .resolve-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.resolve-btn {
+  background-color: #2fb344 !important;
+  border-color: #2fb344 !important;
+  color: white !important;
+}
+
+.resolve-btn:disabled {
+  background-color: #d9d9d9 !important;
+  border-color: #d9d9d9 !important;
+  color: rgba(0, 0, 0, 0.25) !important;
+  cursor: not-allowed;
+}
+
+.threat-card-body {
+  padding: 16px;
+  background: white;
+  border-top: 1px solid #eee;
+}
+
+.threat-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.threat-desc {
+  color: #666;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.eco-spinner {
+  display: block;
+  margin: 50px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.eco-spinner::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #00cc99;
+  border-top-color: #2fb344;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.eco-spinner::after {
+  content: '🌿';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* Accessibility: Disable animations for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .threat-card,
+  .btn-primary,
+  .resolve-btn,
+  .eco-spinner::before,
+  .eco-spinner::after,
+  #tsparticles {
+    transition: none !important;
+    animation: none !important;
+    display: none !important; /* Hide particles */
+  }
+}

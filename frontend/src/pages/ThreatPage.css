@@ -1,0 +1,45 @@
+/* ThreatAlertPage.css */
+
+.threat-page-wrapper {
+    min-height: 100vh;
+    padding-top: 70px;
+  }
+  
+  .threat-page-header {
+    background-color: #005f46; /* Dark green */
+    padding: 80px 20px 50px 20px;
+    margin-bottom: 30px;
+  }
+  
+  .threat-header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: white;
+  }
+  
+  .threat-header-content h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .threat-header-content p {
+    font-size: 16px;
+    color: #d1d5db;
+  }
+  
+  .threat-page-body {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 50px 20px;
+  }
+  
+  .threat-content {
+    background: rgb(249, 73, 73);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+  }
+  
